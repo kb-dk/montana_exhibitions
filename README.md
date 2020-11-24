@@ -19,3 +19,9 @@ Running
 source .venv/bin/activate
 python3 src/main.py --csv test.csv
 ```
+
+Viewing
+```bash
+python3 -m http.server
+```
+Now visit http://localhost:8000/output
