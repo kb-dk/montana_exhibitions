@@ -21,9 +21,13 @@ def load_csv(filename):
 
 def create_file(obj):
     try:
-        folder = f"output/iPad{obj['ipad']}/{obj['item']}"
+        ipad_folder = f"output/iPad{obj['ipad']}"
+        folder = f"{ipad_folder}/{obj['item']}"
         file = f"index_{obj['language']}.html"
         Path(folder).mkdir(parents=True)
+        sym = Path(f"{ipad_folder}/includes")
+        sym.symlink_to('../../includes')
+        sym.touch()
     except FileExistsError as e:
         pass
     try:
