@@ -1,6 +1,6 @@
 # Montana Exhibitions
 
-Static site generator for our iPad exhibitions
+Static site generator for 'Skatteudstilling 2020' iPads
 
 ## Usage
 
@@ -30,3 +30,6 @@ Clear output folder
 ```bash
 rm -rf output/*
 ```
+
+Fonts
+We use 'Berlingske' fonts in our stylesheet, if you need to access them you need to write to 'servicedesk.kb.dk' and get access to the folder, and then place it under your includes folder.
