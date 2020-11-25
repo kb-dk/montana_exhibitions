@@ -1,4 +1,4 @@
-import os
+from pathlib import Path, PosixPath
 import csv
 import argparse
 import sys
@@ -18,10 +18,15 @@ def load_csv(filename):
             obj['language'] = row[3]
             obj['short_description'] = row[4]
             try:
-                generate.html(obj)
+                folder = f"output/iPad{obj['ipad']}/{obj['item']}"
+                file = f"index_{obj['language']}.html"
+                Path(folder).mkdir(parents=True)
+            except FileExistsError as e:
+                pass
+            try:
+                generate.html(obj, folder + '/' + file)
             except Exception as e:
                 print(e)
-
 
 def getOptions(args=sys.argv[1:]):
     parser = argparse.ArgumentParser(description="Generate html from csv")
@@ -31,7 +36,7 @@ def getOptions(args=sys.argv[1:]):
 
 def main():
     options = getOptions()
-    filename = os.path.expanduser(options.csv)
+    filename = PosixPath(options.csv).expanduser()
     load_csv(filename)
 
 if __name__ == '__main__':
