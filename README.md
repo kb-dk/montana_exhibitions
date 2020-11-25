@@ -4,7 +4,7 @@ Static site generator for 'Skatteudstilling 2020' iPads
 
 ## Usage
 
-(Optional) Setup virtualenv
+#### (Optional) Setup virtualenv
 ```bash
 sudo apt install python3-venv python3-pip python3-dev
 python3 -m venv .venv
@@ -13,24 +13,24 @@ source .venv/bin/activate
 deactivate
 ```
 
-Setup
+#### Setup
 ```bash
 pip3 install --upgrade pip
 pip3 install -r requirements.txt # or pip3 install Jinja2
 ```
 
-Running
+#### Running
 ```bash
 python3 src/main.py --csv test.csv
 ```
 
-Viewing
+#### Viewing
 ```bash
 python3 -m http.server
 ```
 Now visit http://localhost:8000/output
 
-Clear output folder
+#### Clear output folder
 ```bash
 rm -rf output/*
 ```
