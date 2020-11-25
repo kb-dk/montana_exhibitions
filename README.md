@@ -31,5 +31,5 @@ Clear output folder
 rm -rf output/*
 ```
 
-Fonts
+#### Fonts
 We use 'Berlingske' fonts in our stylesheet, if you need to access them you need to write to 'servicedesk.kb.dk' and get access to the folder, and then place it under your includes folder.
