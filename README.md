@@ -25,3 +25,8 @@ Viewing
 python3 -m http.server
 ```
 Now visit http://localhost:8000/output
+
+Clear output folder
+```bash
+rm -rf output/*
+```
