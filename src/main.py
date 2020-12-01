@@ -23,7 +23,10 @@ def create_file(obj):
     try:
         ipad_folder = f"output/iPad{obj['ipad']}"
         folder = f"{ipad_folder}/{obj['item']}"
-        file = f"index_{obj['language']}.html"
+        if obj['language'] == 'dk':
+            file = f"index.html"
+        else:
+            file = f"index-{obj['language']}.html"
         Path(folder).mkdir(parents=True)
     except FileExistsError as e:
         pass
