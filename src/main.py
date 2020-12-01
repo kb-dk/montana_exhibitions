@@ -25,9 +25,6 @@ def create_file(obj):
         folder = f"{ipad_folder}/{obj['item']}"
         file = f"index_{obj['language']}.html"
         Path(folder).mkdir(parents=True)
-        sym = Path(f"{ipad_folder}/includes")
-        sym.symlink_to('../../includes')
-        sym.touch()
     except FileExistsError as e:
         pass
     try:
