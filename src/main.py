@@ -13,25 +13,28 @@ def load_csv(filename):
         for row in csv_reader:
             obj = {}
             obj['theme'] = row[0]
-            obj['ipad'] = row[1]
-            obj['item'] = row[2]
-            obj['language'] = row[3]
-            obj['short_description'] = row[4]
+            obj['theme_title'] = row[1]
+            obj['ipad'] = row[2]
+            obj['item'] = row[3]
+            obj['language'] = row[4]
+            obj['short_description'] = row[5]
+            obj['title'] = row[6]
+            obj['description_1'] = row[7]
+            obj['description_2'] = row[8]
+            obj['image'] = row[9]
+            obj['video'] = row[10]
             create_file(obj)
 
 def create_file(obj):
     try:
-        ipad_folder = f"output/iPad{obj['ipad']}"
+        ipad_folder = f"output/{obj['theme']}/iPad{obj['ipad']}"
         folder = f"{ipad_folder}/{obj['item']}"
-        if obj['language'] == 'dk':
-            file = f"index.html"
-        else:
-            file = f"index-{obj['language']}.html"
         Path(folder).mkdir(parents=True)
     except FileExistsError as e:
         pass
     try:
-        generate.html(obj, folder + '/' + file)
+        generate.html(obj, "index", ipad_folder)
+        generate.html(obj, "text", folder)
     except Exception as e:
         print(e)
 

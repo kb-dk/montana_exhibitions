@@ -1,7 +1,13 @@
-theme;iPad nr.;item nr.;language;short description
-theme1;1;1;dk;short description 1 på dansk
-theme1;1;1;uk;short description 1 in english
-theme1;1;2;dk;short description 2 på dansk
-theme1;1;2;uk;short description 2 in english
-theme1;2;1;dk;short description 3 på dansk
-theme1;2;1;uk;short description 3 in english
+Folder navn;Tema navn oversættelse;iPad nr. ;Item nr. ;Language ;Short description ;Title ;Description 1;Description 2 ;Image ;video 
+Tema1;Tema1_uk;1;1;uk;Short description1 uk;Title uk;Description 1 uk;Description 2 uk;no;no
+Tema1;Tema1_dk;1;1;dk;Short description1 dk;Title dk;Description 1 dk;Description 2 dk;no;no
+Tema1;Tema1_kid;1;1;kid;Short description1 kid;Title kid;Description 1 kid;Description 2 kid;no;no
+Tema1;Tema1_uk;1;2;uk;Short description2 Uk;Title uk;Description 1 uk;Description 2 uk;no;no
+Tema1;Tema1_dk;1;2;dk;Short description2 Dk;Title dk;Description 1 dk;Description 2 dk;no;no
+Tema1;Tema1_kid;1;2;kid;Short description2 kid;Title kid;Description 1 kid;Description 2 kid;no;no
+Tema1;Tema1_uk;2;1;uk;Short description1 uk;Title uk;Description 1 uk;Description 2 uk;no;no
+Tema1;Tema1_dk;2;1;dk;Short description1 dk;Title dk;Description 1 dk;Description 2 dk;no;no
+Tema1;Tema1_kid;2;1;kid;Short description1 kid;Title kid;Description 1 kid;Description 2 kid;no;no
+Tema2;Tema2_uk;1;1;uk;Short description1 uk;Title uk;Description 1 uk;Description 2 uk;no;no
+Tema2;Tema2_dk;1;1;dk;Short description1 dk;Title dk;Description 1 dk;Description 2 dk;no;no
+Tema2;Tema2_kid;1;1;kid;Short description1 kid;Title kid;Description 1 kid;Description 2 kid;no;no

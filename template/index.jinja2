@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ title }}</title>
+    <title>{{ theme_title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="../../../../includes/css/style.css">
@@ -13,14 +13,14 @@
     <div class="wrapper">
 
         <nav class="lang">
-            <a href="index.html" id="da" class="active">DK</a>
-            <a href="index-uk.html" id="en">UK</a>
+            <a href="index.html" id="da" class="{{ 'active' if language == 'dk' }}">DK</a>
+            <a href="indexUk.html" id="en" class="{{ 'active' if language == 'uk' }}">UK</a>
         </nav>
 
-        <h1 class="uppercase">{{ title }}</h1>
+        <h1 class="uppercase">{{ theme_title }}</h1>
 
         <div class="txtPerson">
-            <p>paragraph here</p>
+            <p>{{ short_description }}</p>
             <button class="button" onclick="$:location.href='personItems.html'">L&aelig;s om de enkelte genstande</button>
         </div>
 

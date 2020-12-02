@@ -1,14 +1,17 @@
 from jinja2 import Template
 
-def html(obj, file_path):
-    with open('template/index.jinja2', 'r') as f:
+def html(obj, template_name, folder):
+    with open(f"template/{template_name}.jinja2", 'r') as f:
         template = f.read()
-    data = {
-        "title": obj['theme']
-    }
 
     j2_template = Template(template)
-    html_output = j2_template.render(data)
+    html_output = j2_template.render(obj)
+
+    if obj['language'] == 'dk':
+        extension = f".html"
+    else:
+        extension = f"{obj['language'].capitalize()}.html"
+    file_path = f"{folder}/{template_name}{extension}"
 
     html_file = open(file_path, 'w')
     html_file.write(html_output)
