@@ -1,5 +1,5 @@
 .venv
 __pycache__
 Berlingske_typografi
-book/pages
 ~lock*
+/book/pages/
