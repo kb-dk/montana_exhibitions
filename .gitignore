@@ -2,4 +2,5 @@
 __pycache__
 Berlingske_typografi
 ~lock*
-/book/pages/
+.~lock*
+/book/pages
