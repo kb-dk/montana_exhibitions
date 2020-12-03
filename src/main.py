@@ -4,6 +4,7 @@ import csv
 import argparse
 import sys
 
+import json
 import generate
 
 def prepare_output_folder():
@@ -16,22 +17,29 @@ def prepare_output_folder():
 
 def load_csv(filename):
     with open(filename) as csv_file:
+        obj = {}
         csv_file.readline() # read first line
         csv_reader = csv.reader(csv_file, delimiter=';')
         for row in csv_reader:
-            obj = {}
-            obj['theme'] = row[0]
-            obj['theme_title'] = row[1]
-            obj['ipad'] = row[2]
-            obj['item'] = row[3]
-            obj['language'] = row[4]
-            obj['short_description'] = row[5]
-            obj['title'] = row[6]
-            obj['description_1'] = row[7]
-            obj['description_2'] = row[8]
-            obj['image'] = row[9]
-            obj['video'] = row[10]
-            create_file(obj)
+            theme = row[0]
+            ipad = row[2]
+            item = row[3]
+            language = row[4]
+            obj.update({theme: {}})
+            #print(theme + " " + ipad)
+            obj[theme].update({ ipad: {}})
+            #obj[theme][ipad].update({ language: []})
+            #obj[theme][ipad][language].append(item)
+            #obj[theme][ipad].update({ 
+            #obj['short_description'] = row[5]
+            #obj['title'] = row[6]
+            #obj['description_1'] = row[7]
+            #obj['description_2'] = row[8]
+            #obj['image'] = row[9]
+            #obj['video'] = row[10]
+            # create_file(obj)
+        print(json.dumps(obj, indent = 3))
+        exit(0)
 
 def create_file(obj):
     try:
