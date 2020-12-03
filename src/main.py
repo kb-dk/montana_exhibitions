@@ -6,6 +6,13 @@ import sys
 
 import generate
 
+def prepare_output_folder():
+    try:
+        shutil.rmtree('output/')
+    except FileNotFoundError as e:
+        pass
+    Path('output').mkdir()
+    shutil.copytree('includes', 'output/includes')
 
 def load_csv(filename):
     with open(filename) as csv_file:
@@ -25,7 +32,6 @@ def load_csv(filename):
             obj['image'] = row[9]
             obj['video'] = row[10]
             create_file(obj)
-    shutil.copytree('includes', 'output/includes')
 
 def create_file(obj):
     try:
@@ -50,6 +56,7 @@ def getOptions(args=sys.argv[1:]):
 def main():
     options = getOptions()
     filename = PosixPath(options.csv).expanduser()
+    prepare_output_folder()
     load_csv(filename)
 
 if __name__ == '__main__':
