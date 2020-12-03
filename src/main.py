@@ -1,4 +1,5 @@
 from pathlib import Path, PosixPath
+import shutil
 import csv
 import argparse
 import sys
@@ -24,6 +25,7 @@ def load_csv(filename):
             obj['image'] = row[9]
             obj['video'] = row[10]
             create_file(obj)
+    shutil.copytree('includes', 'output/includes')
 
 def create_file(obj):
     try:
