@@ -99,6 +99,7 @@
 /*RESET HTML*/
 *, html, p, h1{
     padding:0;
+    padding-top: 0px;
     margin:0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -131,7 +132,7 @@ p{
 .wrapper{
     position: relative;
     width:1024px;
-    height:708px; /* -60 Kiosk native navbar is 60 heigh*/
+    height:708px; /* -60px Kiosk native navbar is 60px heigh*/
     overflow: hidden;
 }
 
@@ -153,7 +154,7 @@ nav.lang a.active{
 
 h1{
     font-size: 50px;
-    line-height:50;
+    line-height:50px;
     color: white;
     font-family: 'BerlingskeSerifCn-Bold', serif;
     position: absolute;
@@ -214,7 +215,7 @@ h1.home{
     height:76px;
     margin-bottom: 15px;
     overflow: hidden;
-    line-height: 20;
+    line-height: 20px;
     padding-top: 15px;
 }
 .item .button{
@@ -245,7 +246,7 @@ h1.home{
 .smallTxtPerson{
 
     font-size: 17px;
-    line-height: 20;
+    line-height: 20px;
 
 }
 
@@ -310,7 +311,7 @@ h1.home{
 .personItems .largeNumber{
     float:left;
     font-size: 110px;
-    line-height: 110;
+    line-height: 110px;
     display:inline-block;
     margin-right:15px;
     color:#FFF;
@@ -404,7 +405,7 @@ h1.home{
     position:absolute;
     top:50%;
     left:50%;
-    background: transparent url(../img/soundBg.png) no-repeat 0 0;
+    background: transparent url(../img/soundBg.png) no-repeat 0% 0%;
     background-size: 128px 128px;
     margin-top:-104px;
     margin-left:-64px;
