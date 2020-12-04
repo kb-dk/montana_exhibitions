@@ -23,7 +23,33 @@
             <a href="text-uk.html" id="en" class="{{ 'active' if language == 'uk' }}">UK</a>
         </nav>
         <h1>{{ title }}</h1>
-        <div class="txtPerson">
+
+        {% if (video == 'yes' or image == 'yes' or pdf == 'yes') %}
+        <nav class="lp">
+            {% if pdf == 'yes' %}
+             <a href="images.pdf">
+                              {{ 'Billedalbum' if language == 'kid' }}
+                              {{ 'Billedalbum' if language == 'dk' }}
+                              {{ 'Image album' if language == 'uk' }}
+            </a>
+            {% endif %}
+            {% if image == 'yes' %}
+            <a href="book/book.html">
+                            {{ 'Bladrebog' if language == 'kid' }}
+                            {{ 'Bladrebog' if language == 'dk' }}
+                            {{ 'More pages' if language == 'uk' }}
+            </a>
+            {% endif %}
+            {% if video == 'yes' %}
+            <a href="video.html">
+                            {{ 'Ekspertvideo' if language == 'kid' }}
+                            {{ 'Ekspertvideo' if language == 'dk' }}
+                            {{ 'Expert video' if language == 'uk' }}
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+        <div class="{% if (video == 'yes' or image == 'yes' or pdf == 'yes') %}txt{% else %}txtPerson{% endif %}">
             <p>{{ description_1 }}</p>
             <div>
                {% if description_2 %}
