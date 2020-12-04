@@ -28,23 +28,17 @@
         <nav class="lp">
             {% if pdf == 'yes' %}
              <a href="images.pdf">
-                              {{ 'Billedalbum' if language == 'kid' }}
-                              {{ 'Billedalbum' if language == 'dk' }}
-                              {{ 'Image album' if language == 'uk' }}
+                {{ {"uk":"Image album"}[language] | default("Billedalbum") }}
             </a>
             {% endif %}
             {% if image == 'yes' %}
             <a href="book/book.html">
-                            {{ 'Bladrebog' if language == 'kid' }}
-                            {{ 'Bladrebog' if language == 'dk' }}
-                            {{ 'More pages' if language == 'uk' }}
+                {{ {"uk":"More pages"}[language] | default("Bladrebog") }}
             </a>
             {% endif %}
             {% if video == 'yes' %}
             <a href="video.html">
-                            {{ 'Ekspertvideo' if language == 'kid' }}
-                            {{ 'Ekspertvideo' if language == 'dk' }}
-                            {{ 'Expert video' if language == 'uk' }}
+                {{ {"uk":"Expert video"}[language] | default("Ekspertvideo") }}
             </a>
             {% endif %}
         </nav>
@@ -54,9 +48,7 @@
             <div>
                {% if description_2 %}
                 <button class="button readMore">
-                {{ 'Tryk her for mere information' if language == 'kid' }}
-                {{ 'Tryk her for mere information' if language == 'dk' }}
-                {{ 'Press for more information' if language == 'uk' }}
+                {{ {"uk":"Press for more information"}[language] | default("Tryk her for mere information") }}
                 </button>
                 {% endif %}
             </div>
