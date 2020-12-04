@@ -26,13 +26,13 @@
         <div class="txtPerson">
             <p>{{ description_1 }}</p>
             <div>
-               {{ if description_2 }}
+               {% if description_2 %}
                 <button class="button readMore">
                 {{ 'Tryk her for mere information' if language == 'kid' }}
                 {{ 'Tryk her for mere information' if language == 'dk' }}
                 {{ 'Press for more information' if language == 'uk' }}
                 </button>
-                {{ endif }}
+                {% endif %}
             </div>
             <div class="moreTxt">
             {{ description_2 }}
