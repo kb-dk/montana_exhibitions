@@ -9,7 +9,6 @@
     <script src="../../includes/js/changeLanguage.js"></script>
 </head>
 <body>
-
     <div class="wrapper">
 
         <nav class="lang">
@@ -17,14 +16,26 @@
             <a href="index.html" id="da" class="{{ 'active' if language == 'dk' }}">DK</a>
             <a href="index-uk.html" id="en" class="{{ 'active' if language == 'uk' }}">UK</a>
         </nav>
+        <h1 class="uppercase home">{% if  title_main_character %}{{ title_main_character }}{% else %}{{ theme_title }}{% endif %}</h1>
 
-        <h1 class="uppercase home">{{ theme_title }}</h1>
-
-        <div class="txtPerson">
-            <p>{{ short_description }}</p>
-            <button class="button" onclick="$:location.href='personItems.html'">L&aelig;s om de enkelte genstande</button>
-        </div>
-
+        {% if  title_main_character %}
+        <p>{{ main_character_description }}</p>
+        <button class="button" onclick="$:location.href='{{ {"dk":"personItems.html", "uk":"personItemsUk.html", "kid":"personItemsKid.html"}[language] | default("Billedalbum") }}'">
+            {{ {"uk":"Read more about the objects"}[language] | default("L&aelig;s om de enkelte genstande") }}
+        </button>
+        {% else %}
+            {% for item in items %}
+                    <div class="item item{{ '{:02}'.format(item.item_number | int) }}" onclick="$:location.href='{{ item.item_number }}/text.html'">
+                        <span class="number">{{ item.item_number }}</span>
+                        <p class="numbTxt">
+                            {{ item.short_description }}
+                        </p>
+                        <button class="button">
+                            {{ {"uk":"Press for more information"}[language] | default("Tryk her for mere information") }}
+                        </button>
+                    </div>
+            {% endfor %}
+        {% endif %}
     </div>
 
 </body>
