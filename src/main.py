@@ -26,8 +26,12 @@ def load_csv(filename):
             ipad = row[2]
             item = row[3]
             language = row[4]
-            short_description = row[5]
-            title = row[6]
+            title_main_character = row[5]
+            main_character_description = row[6]
+            short_description = row[7]
+            title = row[8]
+            description_1 = row[9]
+            description_2 = row[10]
             if theme not in obj:
                 obj.update({theme: {}})
             if ipad not in obj[theme]:
