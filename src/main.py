@@ -25,7 +25,8 @@ def load_csv(filename):
             ipad = row[2]
             item = row[3]
             language = row[4]
-            obj.update({theme: {}})
+            if theme not in obj:
+                obj.update({theme: {}})
             #print(theme + " " + ipad)
             obj[theme].update({ ipad: {}})
             #obj[theme][ipad].update({ language: []})
