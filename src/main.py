@@ -46,6 +46,9 @@ def load_csv(filename):
                 })
             if language not in obj[theme][ipad]["theme_title"]:
                 obj[theme][ipad]["theme_title"].update({ language: theme_title })
+            if title_main_character:
+                obj[theme][ipad]["title_main_character"] = title_main_character
+                obj[theme][ipad]["main_character_description"] = main_character_description
             if item not in obj[theme][ipad]:
                 obj[theme][ipad].update({
                     item: {
