@@ -44,11 +44,13 @@ def load_csv(filename):
                         "theme_title": {}
                         }
                 })
-            if language not in obj[theme][ipad]["theme_title"]:
-                obj[theme][ipad]["theme_title"].update({ language: theme_title })
+            obj[theme][ipad]["theme_title"].update({ language: theme_title })
             if title_main_character:
-                obj[theme][ipad]["title_main_character"] = title_main_character
-                obj[theme][ipad]["main_character_description"] = main_character_description
+                if "title_main_character" not in obj[theme][ipad]:
+                    obj[theme][ipad]["title_main_character"] = {}
+                    obj[theme][ipad]["main_character_description"] = {}
+                obj[theme][ipad]["title_main_character"].update({ language: title_main_character })
+                obj[theme][ipad]["main_character_description"].update({ language: main_character_description })
             if item not in obj[theme][ipad]:
                 obj[theme][ipad].update({
                     item: {
@@ -61,14 +63,10 @@ def load_csv(filename):
                         "pdf": pdf
                     }
                 })
-            if language not in obj[theme][ipad][item]["short_description"]:
-                obj[theme][ipad][item]["short_description"].update({ language: short_description })
-            if language not in obj[theme][ipad][item]["title"]:
-                obj[theme][ipad][item]["title"].update({ language: title })
-            if language not in obj[theme][ipad][item]["description_1"]:
-                obj[theme][ipad][item]["description_1"].update({ language: description_1 })
-            if language not in obj[theme][ipad][item]["description_2"]:
-                obj[theme][ipad][item]["description_2"].update({ language: description_2 })
+            obj[theme][ipad][item]["short_description"].update({ language: short_description })
+            obj[theme][ipad][item]["title"].update({ language: title })
+            obj[theme][ipad][item]["description_1"].update({ language: description_1 })
+            obj[theme][ipad][item]["description_2"].update({ language: description_2 })
 
             #create_file(obj)
         print(json.dumps(obj, indent = 3))
