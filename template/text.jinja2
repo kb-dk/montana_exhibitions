@@ -1,5 +1,61 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="../../../includes/css/style.css">
+    <script src="../../../includes/js/jquery-1.12.0.min.js"></script>
+    <script src="../../../includes/js/changeLanguage.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".readMore").click(function(){
+                $(".moreTxt").fadeToggle(500);
+            });
+        });
+    </script>
+</head>
 <body>
-Not implemented yet
+    <div class="wrapper text">
+        <nav class="lang">
+            <a href="text-kid.html" id="kid" class="{{ 'active' if language == 'kid' }}">FOR BØRN</a>
+            <a href="text.html" id="da" class="{{ 'active' if language == 'dk' }}">DK</a>
+            <a href="text-uk.html" id="en" class="{{ 'active' if language == 'uk' }}">UK</a>
+        </nav>
+        <h1>{{ title }}</h1>
+
+        {% if (video == 'yes' or image == 'yes' or pdf == 'yes') %}
+        <nav class="lp">
+            {% if pdf == 'yes' %}
+             <a href="images.pdf">
+                {{ {"uk":"Image album"}[language] | default("Billedalbum") }}
+            </a>
+            {% endif %}
+            {% if image == 'yes' %}
+            <a href="book/book.html">
+                {{ {"uk":"More pages"}[language] | default("Bladrebog") }}
+            </a>
+            {% endif %}
+            {% if video == 'yes' %}
+            <a href="video.html">
+                {{ {"uk":"Expert video"}[language] | default("Ekspertvideo") }}
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+        <div class="{% if (video == 'yes' or image == 'yes' or pdf == 'yes') %}txt{% else %}txtPerson{% endif %}">
+            <p>{{ description_1 }}</p>
+            <div>
+               {% if description_2 %}
+                <button class="button readMore">
+                {{ {"uk":"Press for more information"}[language] | default("Tryk her for mere information") }}
+                </button>
+                {% endif %}
+            </div>
+            <div class="moreTxt">
+            {{ description_2 }}
+            </div>
+        </div>
+    </div>
 </body>
 </html>

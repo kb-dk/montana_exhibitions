@@ -85,22 +85,11 @@
     src:  url('../Berlingske_typografi/BerlingskeSans/BerlingskeSansCn-Rg.otf') format('opentype');
 }
 
-/* FONTS */
-@font-face {
-    font-family: 'Verlag-Black';
-    src:  url('../fonts/Verlag/Verlag-Black.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Verlag-Book';
-    src:  url('../fonts/Verlag/Verlag-Book.otf') format('opentype');
-}
-
-
 /*RESET HTML*/
 *, html, p, h1{
-    padding:0px;
+    padding:0;
     padding-top: 0px;
-    margin:0px;
+    margin:0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -113,7 +102,7 @@ em{
 body{
     background-color: black;
     color:#FFF;
-    font-family: 'BerlingskeSansCn-Rg';
+    font-family: 'BerlingskeSansCn-Rg', sans-serif;
     font-size: 18px;
     width: 100%;
     padding-top: 5px;
@@ -139,9 +128,9 @@ p{
 /* Top nav language*/
 nav.lang{
     position: absolute;
-    top:0px;
-    right:23px;
-     font-size: 14px;
+    top:30px;
+    right:35px;
+    font-size: 14px;
 }
 nav.lang a{
     background-color: grey;
@@ -153,25 +142,29 @@ nav.lang a.active{
 }
 
 h1{
-    font-size: 30px;
-    line-height:30px;
+    font-size: 50px;
+    line-height:50px;
     color: white;
-    font-family: 'BerlingskeSerifCn-Blk';
+    font-family: 'BerlingskeSerifCn-Bold', serif;
     position: absolute;
     top:100px;
-    left:78px;
-   
+    left:110px;
+
+}
+
+h1.home{
+    font-family: 'BerlingskeSerifCn-Blk', serif;
 }
 
 .uppercase  {
-     top:105px;
+    top:105px;
     text-transform: uppercase;
 }
 
 .audio {
     color: white;
     font-size: 19px;
-    
+
 }
 /* ITEMS
 *******************************************************************/
@@ -182,7 +175,7 @@ h1{
     top:230px;
 }
 .item01, .item03{
-    left:0px;
+    left:0;
 }
 .item02, .item04{
     left:435px;
@@ -194,16 +187,16 @@ h1{
     float:left;
     width:147px;
     text-align: right;
-    font-size: 137px;
+    font-size: 100px;
     line-height:137px ;
-    font-family: 'BerlingskeSerifCn-Blk';
-    margin-top: -26px;
+    font-family: 'BerlingskeSerifCn-Blk', serif;
+    margin-top: -6px;
     margin-right:25px;
 }
 
 .large{
     left:250px !important;
-   
+
 }
 .item .numbTxt{
     float:left;
@@ -216,11 +209,11 @@ h1{
 }
 .item .button{
     border:none;
-    font-family: 'BerlingskeSansCn-Rg';
+    font-family: 'BerlingskeSansCn-Rg', sans-serif;
     font-size: 16px;
     display:block;
     width:263px;
- 
+
 }
 
 /* PERSON
@@ -228,37 +221,36 @@ h1{
 .txtPerson{
     position: absolute;
     top:190px;
-    left:80px;
+    left:110px;
     width:867px;
     height:520px;
     overflow: scroll;
     font-size: 22px;
     line-height: 150%;
-    font-family: 'BerlingskeSansCn-Rg';
+    font-family: 'BerlingskeSansCn-Rg', sans-serif;
     letter-spacing: 1px;
     padding-bottom: 75px!important;
 }
 
 .smallTxtPerson{
-   
+
     font-size: 17px;
     line-height: 20px;
-    
+
 }
 
 .txtPerson:after{
     content:"";
     height:120px;
-    width:867px;
     position: fixed;
     top:600px;
     left:80px;
     width:866px;
- background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 74%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 74%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .txtPerson button{
     border:none;
-    font-family: 'BerlingskeSansCn-Rg';
+    font-family: 'BerlingskeSansCn-Rg', sans-serif;
     font-size: 16px;
     display:block;
     margin-top:13px;
@@ -280,7 +272,6 @@ h1{
 .personItems:after{
     content:"";
     height:130px;
-    width:867px;
     position: fixed;
     top:580px;
     left:80px;
@@ -293,7 +284,7 @@ h1{
     padding:0;
 }
 .personItems ul li{
-    padding:10px 0px 15px 0px ;
+    padding:10px 0 15px 0 ;
 }
 .personItems .number{
     float:left;
@@ -303,7 +294,7 @@ h1{
     margin-right:15px;
     color:#FFF;
     text-align: left;
-    font-family:'BerlingskeSerifCn-Blk';
+    font-family:'BerlingskeSerifCn-Blk', serif;
     width:53px;
 }
 .personItems .largeNumber{
@@ -313,16 +304,15 @@ h1{
     display:inline-block;
     margin-right:15px;
     color:#FFF;
-    text-align: left;
-    font-family:'BerlingskeSerifCn-Blk';
+    font-family:'BerlingskeSerifCn-Blk', serif;
     width:108px;
     text-align: center;
-   
+
 }
 .kid .item .number,
 .kid .personItems .largeNumber,
 .kid h1{
-    font-family:'BerlingskeSansCn-It';   
+    font-family:'BerlingskeSansCn-It', sans-serif;
 }
 .personItems .numbTxt{
     margin-left:48px;
@@ -334,10 +324,10 @@ h1{
 .personItems .button{
     margin-top:10px;
     border:none;
-    font-family: 'BerlingskeSansCn-Rg';
+    font-family: 'BerlingskeSansCn-Rg', sans-serif;
     font-size: 18px;
     display:block;
-  
+
 }
 
 
@@ -362,31 +352,28 @@ h1{
     overflow: scroll;
     font-size: 22px;
     line-height: 150%;
-    font-family: 'BerlingskeSansCn-Rg';
+    font-family: 'BerlingskeSansCn-Rg', sans-serif;
     letter-spacing: 1px;
-   padding-bottom: 75px!important;
+    padding-bottom: 75px!important;
 }
 
- 
+
 .txt p{
     padding-bottom: 8px;
- }   
+}
 .text .txt:after{
     content:"";
     height:100px;
-   
-        
-    width:100%;
     position: fixed;
     top:620px;
     left:376px;
     width:568px;
-   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .text .txt button{
     border:none;
-    font-family:'BerlingskeSansCn-Rg';
+    font-family:'BerlingskeSansCn-Rg', sans-serif;
     font-size: 16px;
     display:block;
     margin-top:13px;
