@@ -32,36 +32,45 @@ def load_csv(filename):
             title = row[8]
             description_1 = row[9]
             description_2 = row[10]
+            pages = row[11]
+            video = row[12]
+            pdf = row[13]
+
             if theme not in obj:
                 obj.update({theme: {}})
             if ipad not in obj[theme]:
                 obj[theme].update({
-                    ipad: {},
-                    "theme_title": {}
+                    ipad: {
+                        "theme_title": {}
+                        }
                 })
-            if language not in obj[theme]["theme_title"]:
-                obj[theme]["theme_title"].update({ language: theme_title })
+            if language not in obj[theme][ipad]["theme_title"]:
+                obj[theme][ipad]["theme_title"].update({ language: theme_title })
             if item not in obj[theme][ipad]:
                 obj[theme][ipad].update({
                     item: {
                         "short_description": {},
-                        "title": {}
+                        "title": {},
+                        "description_1": {},
+                        "description_2": {},
+                        "pages": pages,
+                        "video": video,
+                        "pdf": pdf
                     }
                 })
             if language not in obj[theme][ipad][item]["short_description"]:
                 obj[theme][ipad][item]["short_description"].update({ language: short_description })
             if language not in obj[theme][ipad][item]["title"]:
                 obj[theme][ipad][item]["title"].update({ language: title })
+            if language not in obj[theme][ipad][item]["description_1"]:
+                obj[theme][ipad][item]["description_1"].update({ language: description_1 })
+            if language not in obj[theme][ipad][item]["description_2"]:
+                obj[theme][ipad][item]["description_2"].update({ language: description_2 })
 
-            #obj[theme][ipad].update({ 
-            #obj['short_description'] = row[5]
-            #obj['title'] = row[6]
-            #obj['description_1'] = row[7]
-            #obj['description_2'] = row[8]
-            #obj['image'] = row[9]
-            #obj['video'] = row[10]
-            # create_file(obj)
+            #create_file(obj)
         print(json.dumps(obj, indent = 3))
+        with open('test.json', 'w') as outfile:
+            json.dump(obj, outfile, indent = 3)
         exit(0)
 
 def create_file(obj):
