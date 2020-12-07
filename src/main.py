@@ -22,15 +22,19 @@ def load_csv(filename):
         csv_reader = csv.reader(csv_file, delimiter=';')
         for row in csv_reader:
             theme = row[0]
+            theme_description = row[1]
             ipad = row[2]
             item = row[3]
             language = row[4]
             if theme not in obj:
                 obj.update({theme: {}})
-            #print(theme + " " + ipad)
-            obj[theme].update({ ipad: {}})
-            #obj[theme][ipad].update({ language: []})
-            #obj[theme][ipad][language].append(item)
+            if ipad not in obj[theme]:
+                obj[theme].update({ipad: {}})
+            if language not in obj[theme][ipad]:
+                obj[theme][ipad].update({ language: []})
+            if item not in obj[theme][ipad][language]:
+                obj[theme][ipad][language].append(item)
+
             #obj[theme][ipad].update({ 
             #obj['short_description'] = row[5]
             #obj['title'] = row[6]
