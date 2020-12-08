@@ -39,39 +39,30 @@ def load_csv(filename):
                 obj.update({theme: {}})
             if ipad not in obj[theme]:
                 obj[theme].update({
-                    ipad: {
-                        "theme_title": {},
+                    ipad: { "languages": {} }
+                })
+            if language not in obj[theme][ipad]["languages"]:
+                obj[theme][ipad]["languages"].update({
+                    language: {
+                        "theme_title": theme_title,
                         "items": {}
                     }
                 })
-            obj[theme][ipad]["theme_title"].update({ language: theme_title })
+            language_obj = obj[theme][ipad]["languages"][language]
             if title_main_character:
-                if "title_main_character" not in obj[theme][ipad]:
-                    obj[theme][ipad]["title_main_character"] = {}
-                    obj[theme][ipad]["main_character_description"] = {}
-                obj[theme][ipad]["title_main_character"].update({ language: title_main_character })
-                obj[theme][ipad]["main_character_description"].update({ language: main_character_description })
-            if item not in obj[theme][ipad]['items']:
-                obj[theme][ipad]['items'][item] = {
-                    "texts": {
-                        "dk": {},
-                        "uk": {},
-                        "kid": {}
-                    }
-                    #"short_description": {},
-                    #"title": {},
-                    #"description_1": {},
-                    #"description_2": {},
-                    #"pages": pages,
-                    #"video": video,
-                    #"pdf": pdf
+                if "title_main_character" not in language_obj:
+                    language_obj["title_main_character"] = title_main_character
+                    language_obj["main_character_description"] = main_character_description
+            if item not in language_obj['items']:
+                language_obj['items'][item] = {
+                    "short_description": short_description,
+                    "title": title,
+                    "description_1": description_1,
+                    "description_2": description_2,
+                    "pages": pages,
+                    "video": video,
+                    "pdf": pdf
                 }
-            if short_description not in obj[theme][ipad]["items"][item]["texts"][language]:
-                obj[theme][ipad]["items"][item]["texts"][language]["short_description"] = short_description
-                obj[theme][ipad]["items"][item]["texts"][language]["title"] = title
-                obj[theme][ipad]["items"][item]["texts"][language]["description_1"] = description_1
-                obj[theme][ipad]["items"][item]["texts"][language]["description_2"] = description_2
-
         return obj
 
 def getOptions(args=sys.argv[1:]):
