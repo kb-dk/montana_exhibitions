@@ -1,4 +1,6 @@
 from jinja2 import Template
+from pathlib import Path, PosixPath
+
 import json
 
 
@@ -12,10 +14,11 @@ def site(obj):
 
     for theme_name, theme in obj.items():
         for ipad_num, ipad in theme.items():
-            
-            path = f'output/{theme_name}/ipad{ipad_num}'
-            print(path)
-    print(json.dumps(obj, indent = 3))
+            for item_num, item in ipad['items'].items():
+                path = f'output/{theme_name}/ipad{ipad_num}/item{item_num}'
+                create_folder(path)
+                print(path)
+    #print(json.dumps(obj, indent = 3))
     exit(0)
 
     try:
