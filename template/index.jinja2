@@ -24,9 +24,9 @@
             {{ {"uk":"Read more about the objects"}[language] | default("L&aelig;s om de enkelte genstande") }}
         </button>
         {% else %}
-            {% for item in items %}
-                    <div class="item item{{ '{:02}'.format(item.item_number | int) }}" onclick="$:location.href='{{ item.item_number }}/text.html'">
-                        <span class="number">{{ item.item_number }}</span>
+            {% for key, item in items.items() %}
+                    <div class="item item{{ '{:02}'.format(key | int) }}" onclick="$:location.href='{{ key }}/text.html'">
+                        <span class="number">{{ key }}</span>
                         <p class="numbTxt">
                             {{ item.short_description }}
                         </p>
