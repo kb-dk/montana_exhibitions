@@ -1,4 +1,34 @@
 from jinja2 import Template
+import json
+
+
+def create_folder(path):
+    try:
+        Path(path).mkdir(parents=True)
+    except FileExistsError as e:
+        print(e)
+
+def site(obj):
+
+    for theme_name, theme in obj.items():
+        for ipad_num, ipad in theme.items():
+            
+            path = f'output/{theme_name}/ipad{ipad_num}'
+            print(path)
+    print(json.dumps(obj, indent = 3))
+    exit(0)
+
+    try:
+        ipad_folder = f"output/{obj['theme']}/iPad{obj['ipad']}"
+        folder = f"{ipad_folder}/{obj['item']}"
+        Path(folder).mkdir(parents=True)
+    except FileExistsError as e:
+        pass
+    try:
+        generate.html(obj, "index", ipad_folder)
+        generate.html(obj, "text", folder)
+    except Exception as e:
+        print(e)
 
 def html(obj, template_name, folder):
     with open(f"template/{template_name}.jinja2", 'r') as f:

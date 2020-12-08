@@ -4,7 +4,6 @@ import csv
 import argparse
 import sys
 
-import json
 import generate
 
 def prepare_output_folder():
@@ -41,8 +40,9 @@ def load_csv(filename):
             if ipad not in obj[theme]:
                 obj[theme].update({
                     ipad: {
-                        "theme_title": {}
-                        }
+                        "theme_title": {},
+                        "items": {}
+                    }
                 })
             obj[theme][ipad]["theme_title"].update({ language: theme_title })
             if title_main_character:
@@ -51,42 +51,28 @@ def load_csv(filename):
                     obj[theme][ipad]["main_character_description"] = {}
                 obj[theme][ipad]["title_main_character"].update({ language: title_main_character })
                 obj[theme][ipad]["main_character_description"].update({ language: main_character_description })
-            if item not in obj[theme][ipad]:
-                obj[theme][ipad].update({
-                    item: {
-                        "short_description": {},
-                        "title": {},
-                        "description_1": {},
-                        "description_2": {},
-                        "pages": pages,
-                        "video": video,
-                        "pdf": pdf
+            if item not in obj[theme][ipad]['items']:
+                obj[theme][ipad]['items'][item] = {
+                    "texts": {
+                        "dk": {},
+                        "uk": {},
+                        "kid": {}
                     }
-                })
-            obj[theme][ipad][item]["short_description"].update({ language: short_description })
-            obj[theme][ipad][item]["title"].update({ language: title })
-            obj[theme][ipad][item]["description_1"].update({ language: description_1 })
-            obj[theme][ipad][item]["description_2"].update({ language: description_2 })
+                    #"short_description": {},
+                    #"title": {},
+                    #"description_1": {},
+                    #"description_2": {},
+                    #"pages": pages,
+                    #"video": video,
+                    #"pdf": pdf
+                }
+            if short_description not in obj[theme][ipad]["items"][item]["texts"][language]:
+                obj[theme][ipad]["items"][item]["texts"][language]["short_description"] = short_description
+                obj[theme][ipad]["items"][item]["texts"][language]["title"] = title
+                obj[theme][ipad]["items"][item]["texts"][language]["description_1"] = description_1
+                obj[theme][ipad]["items"][item]["texts"][language]["description_2"] = description_2
 
-            #create_file(obj)
-        print(json.dumps(obj, indent = 3))
-        with open('test.json', 'w') as outfile:
-            json.dump(obj, outfile, indent = 3)
-        exit(0)
-
-def create_file(obj):
-    try:
-        ipad_folder = f"output/{obj['theme']}/iPad{obj['ipad']}"
-        folder = f"{ipad_folder}/{obj['item']}"
-        Path(folder).mkdir(parents=True)
-    except FileExistsError as e:
-        pass
-    try:
-        generate.html(obj, "index", ipad_folder)
-        generate.html(obj, "text", folder)
-    except Exception as e:
-        print(e)
-
+        return obj
 
 def getOptions(args=sys.argv[1:]):
     parser = argparse.ArgumentParser(description="Generate html from csv")
@@ -98,7 +84,8 @@ def main():
     options = getOptions()
     filename = PosixPath(options.csv).expanduser()
     prepare_output_folder()
-    load_csv(filename)
+    obj = load_csv(filename)
+    generate.site(obj)
 
 if __name__ == '__main__':
   main()
