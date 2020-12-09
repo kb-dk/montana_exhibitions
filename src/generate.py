@@ -26,9 +26,6 @@ def site(obj):
                     html(item, language_key, "text", path)
 
 def html(obj, language, template_name, path):
-    #print(obj)
-    #print("")
-    #print("")
     with open(f"template/{template_name}.jinja2", 'r') as f:
         template = f.read()
 

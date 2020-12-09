@@ -16,11 +16,13 @@ source .venv/bin/activate
 ```bash
 pip3 install --upgrade pip
 pip3 install -r requirements.txt # or pip3 install Jinja2
+pip3 install pandas
+pip3 install xlrd
 ```
 
 #### Running
 ```bash
-python3 src/main.py --csv test.csv
+python3 src/main.py --csv skatteUdstilling_2020.xlsx
 ```
 
 #### Viewing
