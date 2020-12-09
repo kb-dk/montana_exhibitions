@@ -18,7 +18,7 @@ def prepare_output_folder():
 
 def load_excel(filename, obj):
     file = pd.read_excel (filename, header = None)
-    exhibition_list = excel_file.fillna('').iloc[1:].values.tolist()
+    exhibition_list = file.fillna('').iloc[1:].values.tolist()
     for row in exhibition_list:
         process_row(row, obj)
 
