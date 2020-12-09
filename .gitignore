@@ -5,3 +5,4 @@ Berlingske_typografi
 .~lock*
 /book/pages
 output
+output.json

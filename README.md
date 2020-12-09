@@ -15,13 +15,12 @@ source .venv/bin/activate
 #### Setup
 ```bash
 pip3 install --upgrade pip
-pip3 install -r requirements.txt # or pip3 install Jinja2
-pip3 install pandas
-pip3 install xlrd
+pip3 install -r requirements.txt
+# or pip3 install Jinja2, pandas and xlrd
 ```
 
 #### Running
-Provided that you have access to Royal library's 'Adhoc-Skatteudstilling' team, you can copy 'skatteUdstilling_2020.xlsx' to the project root folder from here: https://teams.microsoft.com/l/file/899C55C1-1929-4F98-9482-1C0848F71176?tenantId=6a74b223-3e14-422e-a272-1ee287717296&fileType=xlsx&objectUrl=https%3A%2F%2Fkbintern.sharepoint.com%2Fsites%2FAdhoc-Skatteudstilling%2FDelte%20dokumenter%2FGeneral%2FskatteUdstilling_2020.xlsx&baseUrl=https%3A%2F%2Fkbintern.sharepoint.com%2Fsites%2FAdhoc-Skatteudstilling&serviceName=teams&threadId=19:9bc5e6cb3b3b4ceb86190d651bd61050@thread.tacv2&groupId=0cb62681-4a07-4daa-82eb-8e68a610e7ce
+Provided that you have access to Royal library's 'Adhoc-Skatteudstilling' team, you can copy 'skatteUdstilling_2020.xlsx' to the project root folder from [here](https://teams.microsoft.com/l/file/899C55C1-1929-4F98-9482-1C0848F71176?tenantId=6a74b223-3e14-422e-a272-1ee287717296&fileType=xlsx&objectUrl=https%3A%2F%2Fkbintern.sharepoint.com%2Fsites%2FAdhoc-Skatteudstilling%2FDelte%20dokumenter%2FGeneral%2FskatteUdstilling_2020.xlsx&baseUrl=https%3A%2F%2Fkbintern.sharepoint.com%2Fsites%2FAdhoc-Skatteudstilling&serviceName=teams&threadId=19:9bc5e6cb3b3b4ceb86190d651bd61050@thread.tacv2&groupId=0cb62681-4a07-4daa-82eb-8e68a610e7ce): 
 
 ```bash
 python3 src/main.py --csv skatteUdstilling_2020.xlsx
