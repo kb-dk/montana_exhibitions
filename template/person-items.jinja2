@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title_main_character }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="../../includes/css/style.css">
+    <script src="../../includes/js/jquery-1.12.0.min.js"></script>
+    <script src="../../includes/js/changeLanguage.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <nav class="lang">
+        <a href="person-items-kid.html" id="kid" class="{{ 'active' if language == 'kid' }}">FOR BØRN</a>
+        <a href="person-items.html" id="da" class="{{ 'active' if language == 'dk' }}">DK</a>
+        <a href="person-items-uk.html" id="en" class="{{ 'active' if language == 'uk' }}">UK</a>
+    </nav>
+
+    <h1 class="uppercase">{{ title_main_character }}</h1>
+
+    <div class="personItems">
+        <ul>
+            {% for key, item in items.items() %}
+            <li onclick="$:location.href='item{{ key }}/text.html'">
+                <span class="largeNumber">{{ key }}</span>
+                <p class="numbTxt">
+                    {{ item.short_description }}<br>
+                    <button class="button">
+                        {{ {"uk":"Press for more information"}[language] | default("Tryk her for mere information") }}
+                    </button>
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+
+</html>

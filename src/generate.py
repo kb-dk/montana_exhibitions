@@ -20,6 +20,8 @@ def site(obj):
                 path = f'output/{theme_name}/ipad{ipad_num}'
                 create_folder(path)
                 html(language_obj, language_key, "index", path)
+                if 'title_main_character' in language_obj:
+                    html(language_obj, language_key, "person-items", path)
                 for item_num, item in language_obj['items'].items():
                     path = f'output/{theme_name}/ipad{ipad_num}/item{item_num}'
                     create_folder(path)
