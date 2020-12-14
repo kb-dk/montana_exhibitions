@@ -30,7 +30,7 @@ def load_csv(filename, obj):
             process_row(row, obj)
 
 def process_row(row, obj):
-    theme = row[0]
+    theme = row[0].lower().replace(" ", "-")
     theme_title = row[1]
     ipad = row[2]
     item = row[3]

@@ -31,13 +31,13 @@
                 {{ {"uk":"Image album"}[language] | default("Billedalbum") }}
             </a>
             {% endif %}
-            {% if image == 'yes' %}
+            {% if pages == 'yes' %}
             <a href="book/book.html">
                 {{ {"uk":"More pages"}[language] | default("Bladrebog") }}
             </a>
             {% endif %}
             {% if video == 'yes' %}
-            <a href="video.html">
+            <a href="video.mp4">
                 {{ {"uk":"Expert video"}[language] | default("Ekspertvideo") }}
             </a>
             {% endif %}
