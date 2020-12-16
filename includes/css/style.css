@@ -88,7 +88,7 @@
 /*RESET HTML*/
 *, html, p, h1{
     padding:0;
-    padding-top: 0px;
+    padding-top: 0;
     margin:0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -149,7 +149,7 @@ h1{
     position: absolute;
     top:100px;
     left:110px;
-
+    width: 867px;
 }
 
 h1.home{
@@ -220,7 +220,7 @@ h1.home{
 *******************************************************************/
 .txtPerson{
     position: absolute;
-    top:190px;
+    top:230px;
     left:110px;
     width:867px;
     height:520px;
@@ -337,6 +337,9 @@ h1.home{
     position: absolute;
     top:192px;
     left:78px;
+}
+.text h1{
+    font-size: 35px;
 }
 .text nav.lp a {
     display:block;
