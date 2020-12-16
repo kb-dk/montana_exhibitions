@@ -16,7 +16,7 @@
     </script>
 </head>
 <body>
-    <div class="wrapper text">
+    <div class="wrapper text {{ 'kid' if language == 'kid' }}">
         <nav class="lang">
             <a href="text-kid.html" id="kid" class="{{ 'active' if language == 'kid' }}">FOR BØRN</a>
             <a href="text.html" id="da" class="{{ 'active' if language == 'dk' }}">DK</a>

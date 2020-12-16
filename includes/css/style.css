@@ -85,6 +85,11 @@
     src:  url('../Berlingske_typografi/BerlingskeSans/BerlingskeSansCn-Rg.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'chawp';
+    src:  url('../kidsfont/chawp.otf') format('opentype');
+}
+
 /*RESET HTML*/
 *, html, p, h1{
     padding:0;
@@ -309,11 +314,7 @@ h1.home{
     text-align: center;
 
 }
-.kid .item .number,
-.kid .personItems .largeNumber,
-.kid h1{
-    font-family:'BerlingskeSansCn-It', sans-serif;
-}
+
 .personItems .numbTxt{
     margin-left:48px;
     padding-top: 20px;
@@ -401,4 +402,12 @@ h1.home{
     background-size: 128px 128px;
     margin-top:-104px;
     margin-left:-64px;
+}
+
+.kid,
+.kid.text .txt,
+.kid .item .number,
+.kid .personItems .largeNumber,
+.kid h1{
+    font-family:'chawp', sans-serif;
 }

@@ -9,7 +9,7 @@
     <script src="../../includes/js/changeLanguage.js"></script>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper {{ 'kid' if language == 'kid' }}">
 
         <nav class="lang">
             <a href="index-kid.html" id="kid" class="{{ 'active' if language == 'kid' }}">FOR BØRN</a>
@@ -27,7 +27,7 @@
         </div>
         {% else %}
             {% for key, item in items.items() %}
-                    <div class="item item{{ '{:02}'.format(key | int) }}" onclick="$:location.href='item{{ key }}/text.html'">
+                    <div class="item item{{ '{:02}'.format(key | int) }}" onclick="$:location.href='item{{ key }}/text{{ {"uk":"-uk", "kid":"-kid"}[language] | default("") }}.html'">
                         <span class="number">{{ key }}</span>
                         <p class="numbTxt">
                             {{ item.short_description }}
