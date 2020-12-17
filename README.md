@@ -33,5 +33,5 @@ python3 -m http.server
 Now visit http://localhost:8000/output
 
 #### Fonts
-We use 'Berlingske' fonts in our stylesheet, if you need to access them you need to write to 'servicedesk.kb.dk' and get access to the folder, and then place it under your includes folder.
-Provided that you have access to Royal library's 'Adhoc-Skatteudstilling' team, you can copy 'Berlingske_typografi' folder to the project includes folder from [here](https://teams.microsoft.com/_#/school/files/General?threadId=19%3A9bc5e6cb3b3b4ceb86190d651bd61050%40thread.tacv2&ctx=channel&context=Berlingske_typografi&rootfolder=%252Fsites%252FAdhoc-Skatteudstilling%252FDelte%2520dokumenter%252FGeneral%252FBerlingske_typografi)
+We use 'Berlingske' and 'kidsfont' fonts in our stylesheet.
+Provided that you have access to Royal library's 'Adhoc-Skatteudstilling' team, you can copy 'Berlingske_typografi' and 'kidsfont' folders under the project's 'includes' folder from [here](https://teams.microsoft.com/_#/school/files/General?threadId=19%3A9bc5e6cb3b3b4ceb86190d651bd61050%40thread.tacv2&ctx=channel&context=Berlingske_typografi&rootfolder=%252Fsites%252FAdhoc-Skatteudstilling%252FDelte%2520dokumenter%252FGeneral%252FBerlingske_typografi) and [here](https://teams.microsoft.com/_#/school/files/General?threadId=19%3A9bc5e6cb3b3b4ceb86190d651bd61050%40thread.tacv2&ctx=channel&context=kidsfont&rootfolder=%252Fsites%252FAdhoc-Skatteudstilling%252FDelte%2520dokumenter%252FGeneral%252Fkidsfont)
