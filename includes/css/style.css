@@ -85,6 +85,7 @@
     src:  url('../Berlingske_typografi/BerlingskeSans/BerlingskeSansCn-Rg.otf') format('opentype');
 }
 
+/* Kid's view font */
 @font-face {
     font-family: 'chawp';
     src:  url('../kidsfont/chawp.otf') format('opentype');
@@ -93,7 +94,6 @@
 /*RESET HTML*/
 *, html, p, h1{
     padding:0;
-    padding-top: 0;
     margin:0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -388,20 +388,6 @@ h1.home{
 }
 .text .moreTxt{
     display:none;
-}
-
-/* SOUND LANDINGPAGE
-*******************************************************************/
-.soundIkon{
-    width:128px;
-    height: 128px;
-    position:absolute;
-    top:50%;
-    left:50%;
-    background: transparent url(../img/soundBg.png) no-repeat 0% 0%;
-    background-size: 128px 128px;
-    margin-top:-104px;
-    margin-left:-64px;
 }
 
 .kid .item .number,
