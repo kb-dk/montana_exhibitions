@@ -1,8 +1,10 @@
 .venv
 __pycache__
 Berlingske_typografi
+kidsfont
 ~lock*
 .~lock*
 /book/pages
 output
 output.json
+media
