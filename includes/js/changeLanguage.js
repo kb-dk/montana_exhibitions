@@ -1,7 +1,7 @@
 window.changeLanguage = (function (window, $, undefined) {
     var minutesBeforeReset = 4.9,
         cookieName = 'lang',
-        filePostfixEn = 'Uk';
+        filePostfixEn = '-uk';
 
     var ChangeLanguage = function(minutesBeforeReset, cookieName) {
         this.cookieExpirationMs = Math.round(minutesBeforeReset * 1000 * 60);
