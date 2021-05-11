@@ -23,7 +23,7 @@
     <div class="personItems">
         <ul>
             {% for key, item in items.items() %}
-            <li onclick="$:location.href='item{{ key }}/text.html'">
+            <li onclick="$:location.href='item{{ key }}/text{{ {"uk":"-uk", "kid":"-kid"}[language] | default("") }}.html'">
                 <span class="largeNumber">{{ key }}</span>
                 <p class="numbTxt">
                     {{ item.short_description }}<br>
